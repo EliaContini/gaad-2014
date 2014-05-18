@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- specify the page language -->
+<html lang="en-us" dir="ltr">
+	<head>
+		<meta charset="utf-8"/>
+		<!--
+			Author : Elia Contini
+			Created: 14 May 2014
+
+			Global Accessibility Awareness Day 2014
+		-->
+		<title>Accessibility Playground</title>
+		<style>
+			body {
+				background-color: #fff;
+				color: #000;
+				font-family: sans-serif;
+				font-size: 100%;
+			}
+			
+			/*
+			Hide accessibility page helpers
+			allowing screenreader to read them
+			*/
+			.a11y {
+				border: 0;
+				height: 0;
+				left: 0;
+				margin: 0;
+				overflow: hidden;
+				padding: 0;
+				position: absolute;
+				top: 0;
+				width: 0;
+			}
+
+			form ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- enable users to skip quickly to content and navigation-->
+		<ul class="a11y">
+			<li><a href="#main">Skip to content</a></li>
+			<li><a href="#nav">Skip to navigation</a></li>
+		</ul>
+		<!-- use wai-aria attribute
+			http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140311/aria.html#ARIA4
+		-->
+		<header role="banner">
+			<h1>Accessibility Playground</h1>
+		</header>
+		<hr/>
+		<nav id="nav" role="navigation">
+			<ul>
+				<li><a href="#index.html">Home</a></li>
+				<li><a href="#contact.html">Contact</a></li>
+				<li><a href="#about.html">About</a></li>
+			</ul>
+		</nav>
+		<hr/>
+		<main id="main" role="main">
+			<h1>Content must be semantically structured</h1>
+			<p>To present the content we use
+			<abbr title="Cascading Style Sheet">CSS</abbr> or, translated
+			in italian <span lang="it-it">fogli di stile</span>.
+			</p>
+
+			<h2>Hyperlinks</h2>
+			<p>Hyperlinks must be point to a URL: avoid <code>href="#"</code>
+			or <code>href="javascript:"</code></p>
+			
+			<p>If the linked resource is in a different language use
+			<code>hreflang="de-ch"</code> attribute. In addition, use the
+			<code>title="External link"</code> to tell user that clicking on
+			the link he will leave your website.
+			</p>
+
+			<!-- Avoid to open link in new window
+				http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140311/H83
+			-->
+			<p>Avoid <code>target="_blank"</code> to open a link in a new
+			window!</p>
+			
+			<h2>Use tables only for data</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Header content 1</th>
+						<th>Header content 2</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td>Footer content 1</td>
+						<td>Footer content 2</td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td>Body content 1</td>
+						<td>Body content 2</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>Forms</h2>
+			<form action="myAction" method="post">
+				<!-- group related input fields -->
+				<fieldset>
+					<legend>Personal information</legend>
+					<ul>
+						<li>
+							<!-- Always associate a label to a input field -->
+							<label for="name">First name</label><br />
+							<input type="text" name="name" id="name" tabindex="10" />
+						</li>
+						<li>
+							<label for="surname">Last name</label><br />
+							<input type="text" name="surname" id="surname" tabindex="20" />
+						</li>
+						<li>
+							Gender<br />
+							<input type="radio" name="sex" id="sex_male" value="male" checked="checked" />
+							<label for="sex_male">Male</label>
+							<input type="radio" name="sex" id="sex_female" value="female" />
+							<label for="sex_female">Female</label>
+						</li>
+						<li>
+							<label for="country">Country</label><br />
+							<select name="country" id="country">
+								<option value="--" selected="selected">
+									Select your country
+								</option>
+								<option value="ch">Switzerland</option>
+								<option value="it">Italy</option>
+								<option value="de">Germany</option>
+								<option value="fr">France</option>
+							</select>
+						</li>
+					</ul>
+				</fieldset>
+				<fieldset>
+					<legend>Languages</legend>
+					<ul>
+						<li>
+							<input type="checkbox" name="language_it" id="language_it" value="it" checked="checked" />
+							<label for="language_it">Italian</label>
+						</li>
+						<li>
+							<input type="checkbox" name="language_en" id="language_en" value="en" />
+							<label for="language_en">English</label>
+						</li>
+						<li>
+							<input type="checkbox" name="language_de" id="language_de" value="de" />
+							<label for="language_de">German</label>
+						</li>
+						<li>
+							<input type="checkbox" name="language-fr" id="language_fr" value="fr" />
+							<label for="language_fr">French</label>
+						</li>
+					</ul>
+				</fieldset>
+				<fieldset>
+					<legend>Feedback</legend>
+					<ul>
+						<li>
+							<label for="feedback">Your suggestions</label><br />
+							<textarea cols="60" rows="10" name="opinion" id="feedback">
+							</textarea>
+						</li>
+					</ul>
+					<input type="submit" value="Send" />
+				</fieldset>
+			</form>
+		</main>
+		<hr/>
+		<footer role="contentinfo">
+			Put author info etc. here		
+		</footer>
+	</body>
+</html>

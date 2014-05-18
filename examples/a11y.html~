@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it-it" dir="ltr">
+	<head>
+		<meta charset="utf-8"/>
+		<!--
+			Author : Elia Contini
+			Created: 14 May 2014
+
+			Global Accessibility Awareness Day
+		-->
+		<title>Pagina di test - FrontEnders Ticino</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<header role="banner">
+			<h1 class="title">Global Accessibility Awareness Day</h1>
+		</header>
+		<hr/>
+		<main role="main">
+			<h1 class="title">Quando</h1>
+			<p>Il 15 Maggio 2014, alle ore 19:00 incontro dei FrontEnders
+			Ticino.</p>
+			
+			<h1 class="title">Dove</h1>
+			<p>Scuole Medie Lugano 2 – Besso<br/>
+			Ispettorato delle Scuole speciali<br/>
+			Via al Nido 15<br/>
+			CH – 6900 Lugano</p>
+			
+			<h1 class="title">Tema</h1>
+			<p><strong>Accessibilità del Web</strong>. In occasione del 
+			<a href="http://globalaccessibilityawarenessday.org" lang="en-us"
+			hreflang="en-us" title="Link esterno">Global Accessibility Awareness Day</a> un'intera
+			serata dedicata all'accessibilità dei siti e dei servizi Web.</p>		
+		</main>
+		<hr/>
+		<footer role="contentinfo">
+			&copy; FrontEnders Ticino
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+/*
+	Author : Elia Contini
+	Created: 14 May 2014
+
+	Global Accessibility Awareness Day 2014
+*/
+
+body {
+	background-color: #fff;
+	color: #000;
+	font-family: sans-serif;
+	font-size: 100%;
+}
+
+.title {
+	font-size: 1.75em;
+	font-weight: 600;
+	margin: .1em 0;
+	padding: .1em 0;
+}
